@@ -1,0 +1,95 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-agent-hands-on-tutorial"
+version = "0.1.0"
+description = "AI Builder series: hands-on tutorials for building efficient AI agents with Strands framework"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "LICENSE" }
+authors = [
+    { name = "AI Builder Community" }
+]
+keywords = ["ai", "agents", "strands", "llm", "multi-agent", "rag", "research"]
+
+dependencies = [
+    # Core agent framework
+    "strands-agents>=0.1.0",
+    "strands-agents-tools>=0.1.0",
+    
+    # AWS integration
+    "boto3>=1.26.0",
+    
+    # Web utilities
+    "requests>=2.28.0",
+    "beautifulsoup4>=4.11.0",
+    "ddgs>=3.8.0",  # DuckDuckGo Search
+    
+    # Jupyter support
+    "jupyter>=1.0.0",
+    "ipython>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.20.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+    "ipython>=8.0.0",
+]
+rag = [
+    "chroma-client>=0.3.0",
+    "langchain>=0.1.0",
+]
+ollama = [
+    "ollama>=0.1.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/ai-agent-hands-on-tutorial"
+"Documentation" = "https://github.com/yourusername/ai-agent-hands-on-tutorial#readme"
+"Bug Tracker" = "https://github.com/yourusername/ai-agent-hands-on-tutorial/issues"
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | __pycache__
+)/
+'''
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+select = ["E", "F", "W", "I", "N", "UP"]
+ignore = ["E501"]  # Line too long (handled by black)
+extend-exclude = [".git", ".venv", "build", "dist"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-v --strict-markers"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
