@@ -1,0 +1,91 @@
+# Environment & Credentials
+.env
+.env.local
+.env.*.local
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.code-workspace
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv/
+pipenv-Pipfile.lock
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Project-Specific Generated Files
+agent_outputs/
+demo_cache/
+# BASELINE_REPORT.md
+# SKILLED_REPORT.md
+COMPARISON_ANALYSIS.md
+# COMPARISON_ANALYSIS_REVISED.md
+BASELINE_ANALYSIS.md
+SKILLED_ANALYSIS.md
+docs/Session4/*
+
+# Python Version Management
+.python-version
+.pyenv
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Logs
+*.log
+logs/
+
+# OS Files
+Thumbs.db
+*.bak
+*.tmp
+
+# Miscellaneous
+0}
+*.pickle
+*.pkl
+.claude/
+
+# Optional: Keep commented for local development caching if needed
+# Claude Code caching (uncomment to track)
+# .claude/
